@@ -4,40 +4,29 @@
     <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
     <title>Assignment1-Game</title>
     <!-- <script src="jquery-s.1.0.min.js"></script> -->
+    
+    <script src="https://maps.googleapis.com/maps/api/js"></script>	
     <script src="board.js"></script>
-    <script src="ai.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <link href="indexCss.css" rel="stylesheet">
 </head>
 <body onload="onloadFunction()">
+	<div id="map_canvas"></div>
 	<!--Here is a Start Menu!-->
+
 	<div id="Menu">
 		<div id="StartMenu"><br>Hello! This Game is <br><b>Pong Hau Ki</b>
-
-			<!--Here is a choose whether one player or two players!-->
-			<p id="oneTwoPlayer">
-				<br>
-				<button id="onePlayer" onclick="onePlayerOnclickFunction()">One Player</button><br><br>
-				<button id="twoPlayer" onclick="twoPlayerOnclickFunction()">Two Players</button>
-			</p>
-
 			<!--Here is if one player-->
-			<p id="chooseSide">Please Choose your side
+			<div id="ChooseSide">Please Register and Choose Your Color<br><br>
+				<b>Your Name</b>: <input type="text" id="playerName" value="Player Name"><br>
+				<b>Latitude </b>: <input type="number" step = "0.01" id="latitude" value=22.31><br>
+				<b>Longitude</b>: <input type="number" step = "0.01" id="longitude" value=114.18><br><br>
 				<button id="blue" onclick="blueOnclickFunction()">BLUE</button> 
-				<button id="red" onclick="redOnclickFunction()">RED</button>
-			</p>
-
-			<!--Here is if two players!-->
-			<div id="playersNameColor">
-				<span style = 'color:red'>Name</span>: <input type="text" id="nameA" value="nameA"><br>
-				<span style ='color:blue'>Name</span>: <input type="text" id="nameB" value="nameB"><br>
-				<div id="twoPlayerChooseSide">
-					<p id="twoPlayerChooseSideWords"></p>
-					<button id="blue" onclick="blueOnclickFunction()">BLUE</button><button id="red" onclick="redOnclickFunction()">RED</button>
-				</div>
+				<button id="red" onclick="redOnclickFunction()">RED</button><br>
+				<button id="mapButton">Game Community</button>
 			</div>
 		</div>
-		<div id="areYouReady"><p id="areYouReadyWords"></p><button id = "startButton" onclick="startButtonOnclickFunction()">Start</button>
-		</div>
+		<div id="waitingAgainst"></div>
 	</div>
 
 	<!--Here is a board to play the game!-->
@@ -54,5 +43,7 @@
 	<button id="stop" onclick = "stopOnclickFunction()">Stop</button>
 	<button id="restart" onclick="restartOnclickFunction()">Restart</button>
 	<button id="refresh" onclick="refreshOnclickFunction()">Refresh Page</button>
+	<button id="back" onclick="refreshOnclickFunction()">Back</button>
+	<div id="playingWaitingAgainst"></div>
 </body>
 </html>
