@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+    <title>Assignment1-Game</title>
+    <!-- <script src="jquery-s.1.0.min.js"></script> -->
+    <script src="board.js"></script>
+    <script src="ai.js"></script>
+    <link href="indexCss.css" rel="stylesheet">
+</head>
+<body onload="onloadFunction()">
+	<!--Here is a Start Menu!-->
+	<div id="Menu">
+		<div id="StartMenu"><br>Hello! This Game is <br><b>Pong Hau Ki</b>
+
+			<!--Here is a choose whether one player or two players!-->
+			<p id="oneTwoPlayer">
+				<br>
+				<button id="onePlayer" onclick="onePlayerOnclickFunction()">One Player</button><br><br>
+				<button id="twoPlayer" onclick="twoPlayerOnclickFunction()">Two Players</button>
+			</p>
+
+			<!--Here is if one player-->
+			<p id="chooseSide">Please Choose your side
+				<button id="blue" onclick="blueOnclickFunction()">BLUE</button> 
+				<button id="red" onclick="redOnclickFunction()">RED</button>
+			</p>
+
+			<!--Here is if two players!-->
+			<div id="playersNameColor">
+				<span style = 'color:red'>Name</span>: <input type="text" id="nameA" value="nameA"><br>
+				<span style ='color:blue'>Name</span>: <input type="text" id="nameB" value="nameB"><br>
+				<div id="twoPlayerChooseSide">
+					<p id="twoPlayerChooseSideWords"></p>
+					<button id="blue" onclick="blueOnclickFunction()">BLUE</button><button id="red" onclick="redOnclickFunction()">RED</button>
+				</div>
+			</div>
+		</div>
+		<div id="areYouReady"><p id="areYouReadyWords"></p><button id = "startButton" onclick="startButtonOnclickFunction()">Start</button>
+		</div>
+	</div>
+
+	<!--Here is a board to play the game!-->
+	<div id="board">
+		<canvas id = "lines" class="myLine" width="300" height="150"></canvas>
+		<canvas id = "circle1" class="myCircle"  width="100" height="50" draggable="true"></canvas>
+		<canvas id = "circle2" class="myCircle"  width="100" height="50" draggable="true"></canvas>
+		<canvas id = "circle3" class="myCircle"  width="100" height="50" draggable="true"></canvas>
+		<canvas id = "circle4" class="myCircle"  width="100" height="50" draggable="true"></canvas>
+		<canvas id = "circle5" class="myCircle"  width="100" height="50" draggable="true"></canvas>
+	</div>
+	<div id="GameOver" class="GameOver"><p id="whowin">Game Over</p></div>
+	<br><br><br>
+	<button id="stop" onclick = "stopOnclickFunction()">Stop</button>
+	<button id="restart" onclick="restartOnclickFunction()">Restart</button>
+	<button id="refresh" onclick="refreshOnclickFunction()">Refresh Page</button>
+</body>
+</html>
